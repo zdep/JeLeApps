@@ -25,17 +25,13 @@ class ApiController extends Controller
 
     public function profile(Request $request): \Illuminate\Http\JsonResponse
     {
-        if (!$user_auth = UsersAuth::whereToken($request->bearerToken())->first()) {
-            return response()->json(
-                [
-                    'error' => 11,
-                    'error_text' => 'Not found',
-                ],
-                404
-            );
-        }
+        $user_auth = UsersAuth::whereToken($request->bearerToken())->first();
+        $user = $user_auth
+            ->user()
+            ->first()
+            ->makeHidden([ 'email_verified_at' ]);
 
-        return response()->json($user_auth->user()->first(), 200);
+        return response()->json($user, 200);
     }
 
     // разместил метод временно здесь, но как только появятся хэлперы, перенес бы туда
