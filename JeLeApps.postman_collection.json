@@ -1,0 +1,95 @@
+{
+	"info": {
+		"_postman_id": "c618e257-f7ec-4c84-a25b-5c8df5427b41",
+		"name": "JeLeApps",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "19203161",
+		"_collection_link": "https://galactic-shuttle-848244.postman.co/workspace/New-Team-Workspace~5f8eb686-3d24-452b-a3e9-a8b1e8df53a2/collection/19203161-c618e257-f7ec-4c84-a25b-5c8df5427b41?action=share&source=collection_link&creator=19203161"
+	},
+	"item": [
+		{
+			"name": "registration",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"my@mail.ru\",\r\n    \"password\": \"aosdjdd\",\r\n    \"gender\": \"М\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{local}}/api/registration",
+					"host": [
+						"{{local}}"
+					],
+					"path": [
+						"api",
+						"registration"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "profile",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "5d2d371f3c7eb43ec260cbc986df6d59d67a8f1ca2f7fecaea2c031c28a86500536eafb2233f5a02",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{local}}/api/profile",
+					"host": [
+						"{{local}}"
+					],
+					"path": [
+						"api",
+						"profile"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "local",
+			"value": "https://JeLeApps.local",
+			"type": "string"
+		}
+	]
+}
