@@ -9,7 +9,7 @@
 
 ## Запуск
 
-- Склонировать репозиторий (get clone https://github.com/zdep/JeLeApps JeLeApps.local)
+- Склонировать репозиторий (git clone https://github.com/zdep/JeLeApps JeLeApps.local)
 - Скопировать .env.example в .env
 - composer install
 - php artisan migrate
